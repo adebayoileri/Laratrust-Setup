@@ -33,5 +33,6 @@ class AuthController extends Controller
                 $user->attachRole('Customer');
 
              }
+             
     }
 }

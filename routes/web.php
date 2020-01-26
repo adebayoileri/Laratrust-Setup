@@ -19,3 +19,7 @@ Route::post('register', 'AuthController@postRegister')->name('register');
 // Auth::routes();
 // Route::post()
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('fw/users', 'UserController@users');
+Route::get('fw/roles', 'RoleController@roles');
