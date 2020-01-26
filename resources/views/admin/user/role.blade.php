@@ -19,7 +19,6 @@
                           <tr>
                             <th scope="col">id</th>
                             <th scope="col">Role name</th>
-                            <th scope="col">Role</th>
                             <th scope="col">Action</th>
                           </tr>
                         </thead>
