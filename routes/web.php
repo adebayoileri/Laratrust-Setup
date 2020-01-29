@@ -23,3 +23,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('fw/users', 'UserController@users');
 Route::get('fw/roles', 'RoleController@roles');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
