@@ -23,6 +23,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('fw/users', 'UserController@users');
 Route::get('fw/roles', 'RoleController@roles');
+Route::get('fw/roles/create', 'RoleController@createrole');
+Route::post('fw/roles/create', 'RoleController@postcreaterole')->name('createrole');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('success', 'AuthController@success');

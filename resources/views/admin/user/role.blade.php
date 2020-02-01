@@ -19,6 +19,7 @@
                           <tr>
                             <th scope="col">id</th>
                             <th scope="col">Role name</th>
+                            <th scope="col">Permissions</th>
                             <th scope="col">Action</th>
                           </tr>
                         </thead>
@@ -27,6 +28,11 @@
                             <tr>
                                 <th scope="row">{{ $role->id }}</th>
                                   <td>{{ $role->name }}</td>
+                                  <td>
+                                      @foreach ($role->permission as $permission)
+                                          {{ $permission->name }}
+                                      @endforeach
+                                  </td>
                                   <td><button class="btn btn-primary">Edit</button> <button class="btn btn-danger">Delete</button></td>
                                 </tr>
                             @endforeach

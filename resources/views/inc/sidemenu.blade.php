@@ -17,7 +17,7 @@
             <ul>
             <li><a href="{{url('/fw/roles')}}">View Roles</a></li>
                 <li><a href="">View Permissions</a></li>
-                <li><a href="">Create Role</a></li>
+            <li><a href="{{url('/fw/roles/create')}}">Create Role</a></li>
             </ul>
             </ul>
         </div>
