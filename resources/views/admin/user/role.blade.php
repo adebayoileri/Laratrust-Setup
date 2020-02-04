@@ -28,12 +28,7 @@
                             <tr>
                                 <th scope="row">{{ $role->id }}</th>
                                   <td>{{ $role->name }}</td>
-                                  <td>
-                                      @foreach ($role->permission as $permission)
-                                          {{ $permission->name }}
-                                      @endforeach
-                                  </td>
-                                  <td><button class="btn btn-primary">Edit</button> <button class="btn btn-danger">Delete</button></td>
+                            <td><a href="{{url('fw/roles/edit/'.$role->id)}}" class="btn btn-primary">Edit</a> <a href="#" class="btn btn-danger">Delete</a></td>
                                 </tr>
                             @endforeach
                         </tbody>

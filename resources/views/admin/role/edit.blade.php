@@ -17,10 +17,16 @@
                     <div>Create role</div>       
                     <form class="form-group row" action="" method="post">
                         @csrf
-                        <input class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" type="text" required autocomplete="name" name="name" autofocus>
+                    <input class="form-control @error('name') is-invalid @enderror" value="{{$role->name}}" type="text" required autocomplete="name" name="name" autofocus>
                         @foreach ($permissions as $permission)
-                        <label for="role">{{ $permission->name }}</label>
-                    <input type="checkbox" name="permissions[]" value="{{$permission->id}}">
+                        <div class="form-check form-check-inline">
+                            @if($role->permissions->where('id', $permission->id)->count() > 0)
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="{{ $permission->id }}" name="permissions[]" checked="checked">
+                            @else
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="{{ $permission->id }}" name="permissions[]">
+                            @endif
+                            <label class="form-check-label" for="inlineCheckbox1">{{ $permission->dispay_name }}</label>
+                        </div>
                         @endforeach
                         @if (session('permissions'))
                         <div class="alert alert-success" role="alert">
