@@ -35,6 +35,10 @@ class AuthController extends Controller
                 $user->attachRole('Customer');
 
              }
+             return redirect('/success');
              
+    }
+    public function success(){
+        return view('success');
     }
 }

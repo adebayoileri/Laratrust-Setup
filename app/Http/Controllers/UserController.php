@@ -46,7 +46,7 @@ class UserController extends Controller
             return redirect('fw/users');
     }
     public function editUser($userId){
-        $user = User::where('id', $userId)->first();
+        $user = User::find($userId);
         if($user == null){
             return 'User cannot be found';
         }
@@ -57,26 +57,20 @@ class UserController extends Controller
     }
     public function updateUser(Request $request, $userId){
         $this->validate($request,[
-            'email' => 'required',
             'lastname' => 'required',
             'firstname' => 'required',
             'middlename' => 'required',
-            'password' => 'required',
         ]);
 
         //Update existing user
         $user = User::find($userId);
         // dd($user);
-        $user->email = $request->input('email');
         $user->firstname = $request->input('firstname');
         $user->lastname = $request->input('lastname');
         $user->middlename = $request->input('middlename');
-        $user->phonenumber = $request->input('phonenumber');
-        $user->password = \Hash::make($request->input['password']);
-
         $user->save();
 
-            return redirect('/fw/users')->with('success', 'User successfully updated');
+            return redirect('/fw/users');
 
     }
 }
