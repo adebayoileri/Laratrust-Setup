@@ -9,6 +9,7 @@
                 <li><a href="">View Customers</a></li>
                 <li><a href="">View Admins</a></li>
                 <li><a href="">View employees</a></li>
+                <li><a href="">Create User</a></li>
             </ul>
             </ul>
             <hr>

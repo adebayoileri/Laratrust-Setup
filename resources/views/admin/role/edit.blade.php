@@ -14,7 +14,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <div>Create role</div>       
+                    <div>Edit role</div>       
                     <form class="form-group row" action="{{ url('fw/roles/edit/'.$role->id) }}" method="post">
                         @csrf
                     <input class="form-control @error('name') is-invalid @enderror" value="{{$role->name}}" type="text" required autocomplete="name" name="name" autofocus>

@@ -16,6 +16,7 @@ class AuthController extends Controller
              'lastname' => 'required',
              'firstname' => 'required',
              'middlename' => 'required',
+             'phonenumber' => 'required',
              'password' => 'required',
          ]);
  
@@ -25,6 +26,7 @@ class AuthController extends Controller
              $user->firstname = $request->input('firstname');
              $user->lastname = $request->input('lastname');
              $user->middlename = $request->input('middlename');
+             $user->phonenumber = $request->input('phonenumber');
              $user->password = \Hash::make($request->input['password']);
             
              $user->save();

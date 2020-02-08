@@ -33,7 +33,7 @@
                                   <td>{{ $user->lastname }}</td>
                                   <td>{{ $user->middlename }}</td>
                                   <td>{{ $user->roles->first()->name }}</td>
-                                  <td><button class="btn btn-primary">Edit</button> <button class="btn btn-danger">Delete</button></td>
+                                  <td><a role="button" href="{{url('/fw/users/edit/'.$user->id) }}" class="btn btn-primary">Edit</a> <a role="button" class="btn btn-danger">Delete</a></td>
                                 </tr>
                             @endforeach
                         </tbody>
