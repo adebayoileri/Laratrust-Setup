@@ -25,7 +25,8 @@ Route::get('fw/users', 'UserController@users');
 Route::get('fw/roles', 'RoleController@roles');
 Route::get('fw/roles/create', 'RoleController@createrole');
 Route::post('fw/roles/create', 'RoleController@postcreaterole')->name('createrole');
-Route::get('fw/roles/edit/{roleId}', 'RoleController@editRole');
+// Route::get('fw/roles/edit/{roleId}', 'RoleController@editRole');
+Route::get('fw/roles/edit/{roleId}', ['middleware' =>['permission:edit->role'],'uses'=>'RoleController@editRole']);
 Route::post('fw/roles/edit/{roleId}', 'RoleController@updateRole')->name('updaterole');
 
 #user routes
@@ -34,3 +35,4 @@ Route::post('/fw/users/create', 'UserController@storeuser');
 Route::get('/fw/users/edit/{userId}', 'UserController@editUser');
 Route::post('/fw/users/edit/{userId}', 'UserController@updateUser');
 Route::get('success', 'AuthController@success');
+Route::get('control', 'AuthController@control');

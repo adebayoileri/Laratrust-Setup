@@ -41,4 +41,7 @@ class AuthController extends Controller
     public function success(){
         return view('success');
     }
+    public function control(){
+        return view('control');
+    }
 }
