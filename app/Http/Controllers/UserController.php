@@ -17,6 +17,8 @@ class UserController extends Controller
         ];
         return view('admin.user.list', $data);
     }
+
+    //Render Customers
     public function customerList(){
         $users = User::all();
         $data=[
@@ -24,12 +26,21 @@ class UserController extends Controller
         ];
         return view('admin.user.customerlist', $data);
     }
+    //Render Addminstrators
     public function adminList(){
         $users = User::all();
         $data=[
             'users' => $users
         ];
         return view('admin.user.adminlist', $data);
+    }
+    //Render Customers 
+    public function employeeList(){
+        $users = User::all();
+        $data=[
+            'users' => $users
+        ];
+        return view('admin.user.employeelist', $data);
     }
     public function createuser(){
         return view('admin.user.createuser');

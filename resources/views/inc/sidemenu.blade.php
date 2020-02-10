@@ -8,7 +8,7 @@
             <li><a href="{{url('/fw/users')}}">View Users</a></li>
             <li><a href="{{url('/fw/users/customer')}}">View Customers</a></li>
             <li><a href="{{url('/fw/users/admin')}}">View Admins</a></li>
-            <li><a href="">View employees</a></li>
+            <li><a href="{{url('/fw/users/employees')}}">View employees</a></li>
                 <li><a href="{{url('/fw/users/create')}}">Create User</a></li>
             </ul>
             </ul>
