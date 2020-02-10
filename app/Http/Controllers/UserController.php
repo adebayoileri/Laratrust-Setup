@@ -24,6 +24,13 @@ class UserController extends Controller
         ];
         return view('admin.user.customerlist', $data);
     }
+    public function adminList(){
+        $users = User::all();
+        $data=[
+            'users' => $users
+        ];
+        return view('admin.user.adminlist', $data);
+    }
     public function createuser(){
         return view('admin.user.createuser');
     }

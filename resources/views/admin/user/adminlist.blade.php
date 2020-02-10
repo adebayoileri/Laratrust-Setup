@@ -6,7 +6,7 @@
         @include('inc.sidemenu')
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">List of Customers</div>
+                <div class="card-header">List of Adminstrators</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -27,7 +27,7 @@
                         </thead>
                         <tbody>
                             @foreach ($users as $user)
-                                  @if($user->roles->first()->name === 'Customer')
+                                  @if($user->roles->first()->name === 'Adminstrator')
                                   <tr>
                                   <th scope="row">{{ $user->id }}</th>
                                   <td>{{ $user->firstname }}</td>
