@@ -22,11 +22,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('fw/users', 'UserController@users');
+Route::get('fw/users/customer', 'UserController@customerList');
 Route::get('fw/roles', 'RoleController@roles');
 Route::get('fw/roles/create', 'RoleController@createrole');
 Route::post('fw/roles/create', 'RoleController@postcreaterole')->name('createrole');
 // Route::get('fw/roles/edit/{roleId}', 'RoleController@editRole');
-Route::get('fw/roles/edit/{roleId}', ['middleware' =>['permission:edit->role'],'uses'=>'RoleController@editRole']);
+Route::get('fw/roles/edit/{roleId}', ['middleware' =>['permission:edit-role'],'uses'=>'RoleController@editRole']);
 Route::post('fw/roles/edit/{roleId}', 'RoleController@updateRole')->name('updaterole');
 
 #user routes

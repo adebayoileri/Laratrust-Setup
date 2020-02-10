@@ -77,6 +77,6 @@ class RoleController extends Controller
             foreach($newPermissions as $newPermission) {
                $role->attachPermission($newPermission);
             }
-            return redirect('fw/roles')->with('success', 'Edited successfully');
+            return redirect('fw/roles');
         }
 }

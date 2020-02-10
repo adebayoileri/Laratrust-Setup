@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Permission;
+use App\Role;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -15,6 +16,13 @@ class UserController extends Controller
             'users' => $users
         ];
         return view('admin.user.list', $data);
+    }
+    public function customerList(){
+        $users = User::all();
+        $data=[
+            'users' => $users
+        ];
+        return view('admin.user.customerlist', $data);
     }
     public function createuser(){
         return view('admin.user.createuser');
@@ -47,11 +55,13 @@ class UserController extends Controller
     }
     public function editUser($userId){
         $user = User::find($userId);
+        $roles = Role::all();
         if($user == null){
             return 'User cannot be found';
         }
         $data = [
             'user' => $user,
+            'roles' => $roles,
         ];
         return view('admin.user.edituser', $data);
     }
@@ -64,6 +74,18 @@ class UserController extends Controller
 
         //Update existing user
         $user = User::find($userId);
+        $previousRoles = $user->roles()->get();
+        $currentRoles = $request->get('roles');
+        
+        //Run foreach to remove role
+        foreach($previousRoles as $previousRole){
+            $user->detachRole($previousRole);
+        }
+        //Run foreach to add new ones
+        foreach($currentRoles as $currentRole){
+            $user->attachRole($currentRole);
+        }
+
         // dd($user);
         $user->firstname = $request->input('firstname');
         $user->lastname = $request->input('lastname');
