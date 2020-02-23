@@ -14,8 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('register', 'AuthController@showRegisterForm')->name('register');
-Route::post('register', 'AuthController@postRegister')->name('register');
+// Route::get('register', 'AuthController@showRegisterForm')->name('register');
+// Route::post('register', 'AuthController@postRegister')->name('register');
 // Auth::routes();
 // Route::post()
 Route::get('/home', 'HomeController@index')->name('home');
@@ -39,3 +39,7 @@ Route::get('/fw/users/edit/{userId}', 'UserController@editUser');
 Route::post('/fw/users/edit/{userId}', 'UserController@updateUser');
 Route::get('success', 'AuthController@success');
 Route::get('control', 'AuthController@control');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
