@@ -1,5 +1,5 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+<p align="center"><img src="https://camo.githubusercontent.com/23f562c32502c2d2cd5d11519cbd35c17b088c0e/68747470733a2f2f63646e2e7261776769742e636f6d2f73616e7469676172636f722f6c61726174727573742f313335616131356665636432326135313263343434333839643166386362393465373264306661372f646f63732f696d672f6c61726174727573742e737667" width="400"></p>
 
-## About Laravel
+## About Laratrust Panel Setup
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects
+Boiler Plate Code for implementing laratrust in a Laravel Project
